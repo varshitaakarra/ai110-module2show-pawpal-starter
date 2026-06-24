@@ -3,9 +3,26 @@
 ## 1. System Design
 
 **a. Initial design**
+- CORE actions: add pet under the profile, give a rundown of the pet's daily schedule so the app doesn't disrupt it if the pet is already grown and be able to add pet tasks. 
 
 - Briefly describe your initial UML design.
 - What classes did you include, and what responsibilities did you assign to each?
+- Classes: 
+Pet: 
+-Attributes: name, species, age
+-Methods: describe()
+Owner:
+-Attributes: name, available_minutes
+-Methods: has_time_for_task()
+Task:
+-Attributes: title, duration_mins, priority, category 
+-Methods: is_high_priority(), repr()
+Schedule: 
+-Attributes: pet, owner, tasks
+-Methods: add_task(), remove_task(), total_duration(), fits_in_budget()
+Scheduler:
+-Attributes: none
+-Methods: ort_by_priority(), filter_to_time_budget(), build_plan(), explain()
 
 **b. Design changes**
 
